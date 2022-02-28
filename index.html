@@ -52,14 +52,9 @@
         }
 
         function sendText(text) {
-            liff.sendMessages([{
-                'type': 'text',
-                'text': text
-            }]).then(function () {
+            liff.sendMessages ＝　SpreadsheetApp.getActiveSpreadsheet().getSheetByName("シート１"))；
+            ss.doPost(test);
                 liff.closeWindow();
-            }).catch(function (error) {
-                window.alert('Failed to send message ' + error);
-            });
         }
 
         const params = (new URL(document.location)).searchParams;
