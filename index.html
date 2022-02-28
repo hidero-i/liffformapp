@@ -52,8 +52,7 @@
         }
 
         function sendText(text) {
-            liff.sendMessages ＝　SpreadsheetApp.getActiveSpreadsheet().getSheetByName("シート１"))；
-            ss.doPost(test);
+            google.script.run.withSuccessHandler(initializeVue).doPost(text);
                 liff.closeWindow();
         }
 
