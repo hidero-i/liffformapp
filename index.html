@@ -52,8 +52,12 @@
         }
 
         function sendText(text) {
-            google.script.run.doPost(text);
+            google.script.run.doPost(text)
+                .then(function () {
                 liff.closeWindow();
+            }).catch(function (error) {
+                window.alert('Failed to send message ' + error);
+            });
         }
 
         const params = (new URL(document.location)).searchParams;
@@ -66,7 +70,7 @@
                 const taion  = $('input[name="taion"]').val();
                 const biko  = $('input[name="biko"]').val();
                 const msg = `${name}\n${date}\n${taion}\n${biko}`;
-                //sendText(msg);
+                sendText(msg);
                 return false;
             });
         });
