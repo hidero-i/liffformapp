@@ -52,7 +52,7 @@
         }
 
         function sendText(text) {
-            google.script.run.withSuccessHandler(initializeVue).doPost(text);
+            google.script.run.doPost(text);
                 liff.closeWindow();
         }
 
